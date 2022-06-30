@@ -1,5 +1,7 @@
 //Variabilele globale
-let zar_nr1, zar_nr2, poz_j1, poz_j2;
+let zar_nr1, zar_nr2, poz_j1, poz_j2, jucator1 = true, jucator2 = false;
+poz_j1 = 0;
+poz_j2 = 0;
 function $(id){
     return document.getElementById(id);
 }
@@ -20,6 +22,16 @@ function zar(){
     zar_nr2 = Math.floor(Math.random()*6)+1;
     $("zar1").innerHTML = zar_nr1;
     $("zar2").innerHTML = zar_nr2;
+    old_poz = poz_j1;
+    if(jucator1){
+        poz_j1 += zar_nr1;
+        poz_j1 += zar_nr2;
+        if(poz_j1 > 12){
+            poz_j1 = poz_j1 - 12;
+        }
+        //DE FACUT: sa nu poata fi poz_j1 mai mare decat 12
+        setTimeout(() => {animhigh(old_poz, poz_j1);}, 3000);
+    }
     setTimeout(() => {$("zar").style.display = "none";}, 3000);
 }
 function highmergi(numar){
@@ -87,5 +99,3 @@ function animhigh(start, sfarsit){
         setTimeout(() => {highmergi(i);}, i*100);
     }
 }
-setTimeout(() => {animhigh(0, 13)}, 2000);
-setTimeout(() => {highmergi(0)}, 3400);
