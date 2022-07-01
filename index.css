@@ -64,6 +64,10 @@ body{
     width: 50px;
     background-color: rgb(170, 0, 255);
     text-align: center;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
 }
 #highlighter{
     position: absolute;
@@ -73,4 +77,9 @@ body{
     height: 60px;
     background-color: transparent;
     border: 10px solid red;
+}
+#text_j1{
+    position: absolute;
+    top: 280px;
+    left: 400px;
 }

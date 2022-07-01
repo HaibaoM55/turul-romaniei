@@ -6,7 +6,6 @@ function $(id){
     return document.getElementById(id);
 }
 function start(){
-    console.log("START")
     $("joaca").style.display="none";
     $("joc").style.display="block";
 }
@@ -22,17 +21,32 @@ function zar(){
     zar_nr2 = Math.floor(Math.random()*6)+1;
     $("zar1").innerHTML = zar_nr1;
     $("zar2").innerHTML = zar_nr2;
-    old_poz = poz_j1;
     if(jucator1){
+        old_poz = poz_j1;
         poz_j1 += zar_nr1;
         poz_j1 += zar_nr2;
-        if(poz_j1 > 12){
-            poz_j1 = poz_j1 - 12;
+        // if(poz_j1 > 12){
+        //     neupoz_j1 = poz_j1 - 12;
+        //     setTimeout(() => {animhigh(old_poz, 12);}, 2000);
+        //     setTimeout(() => {animhigh(0, neupoz_j1);}, 2000 + (poz_j1 - old_poz) * 100 + 200);
+        //     poz_j1 = poz_j1 - 12;
+        // }
+        vewold_poz = poz_j1;
+        if(poz_j1 > 13)
+        {
+            poz_j1 = poz_j1 - 14;
+            setTimeout(() => {animhigh(old_poz, 13);}, 2000);
+            setTimeout(() => {animhigh(0, poz_j1);}, 4000);
+            setTimeout(() => {j1m_anim(old_poz, 13)}, 2000);
+            setTimeout(() => {j1m_anim(0, poz_j1)}, 4000);
         }
-        //DE FACUT: sa nu poata fi poz_j1 mai mare decat 12
-        setTimeout(() => {animhigh(old_poz, poz_j1);}, 3000);
+        else
+        {
+            setTimeout(() => {animhigh(old_poz, poz_j1);}, 2000);
+            setTimeout(() => {j1m_anim(old_poz, poz_j1)}, 2000);
+        }
     }
-    setTimeout(() => {$("zar").style.display = "none";}, 3000);
+    setTimeout(() => {$("zar").style.display = "none";}, 2000);
 }
 function highmergi(numar){
     if(numar == 0){
@@ -92,10 +106,73 @@ function highmergi(numar){
         $("highlighter").style.left = "400px";
     }
 }
+function mergi_j1(poz_j1){
+    if(poz_j1 == 0){
+        $("text_j1").style.top = "280px";
+        $("text_j1").style.left = "400px";
+    }
+    if(poz_j1 == 1){
+        $("text_j1").style.top = "280px";
+        $("text_j1").style.left = "310px";
+    }
+    if(poz_j1 == 2){
+        $("text_j1").style.top = "280px";
+        $("text_j1").style.left = "200px";
+    }
+    if(poz_j1 == 3){
+        $("text_j1").style.top = "280px";
+        $("text_j1").style.left = "100px";
+    }
+    if(poz_j1 == 4){
+        $("text_j1").style.top = "280px";
+        $("text_j1").style.left = "0px";
+    }
+    if(poz_j1 == 5){
+        $("text_j1").style.top = "180px";
+        $("text_j1").style.left = "0px";
+    }
+    if(poz_j1 == 6){
+        $("text_j1").style.top = "80px";
+        $("text_j1").style.left = "0px";
+    }
+    if(poz_j1 == 7){
+        $("text_j1").style.top = "0px";
+        $("text_j1").style.left = "0px";
+    }
+    if(poz_j1 == 8){
+        $("text_j1").style.top = "0px";
+        $("text_j1").style.left = "110px";
+    }
+    if(poz_j1 == 9){
+        $("text_j1").style.top = "0px";
+        $("text_j1").style.left = "210px";
+    }
+    if(poz_j1 == 10){
+        $("text_j1").style.top = "0px";
+        $("text_j1").style.left = "310px";
+    }
+    if(poz_j1 == 11){
+        $("text_j1").style.top = "0px";
+        $("text_j1").style.left = "400px";
+    }
+    if(poz_j1 == 12){
+        $("text_j1").style.top = "80px";
+        $("text_j1").style.left = "400px";
+    }
+    if(poz_j1 == 13){
+        $("text_j1").style.top = "180px";
+        $("text_j1").style.left = "400px";
+    }
+}
 highmergi(0);
 clearTimeout();
 function animhigh(start, sfarsit){
     for(let i = start; i <= sfarsit; i++){
         setTimeout(() => {highmergi(i);}, i*100);
+    }
+}
+function j1m_anim(start, sfarsit){
+    for(let i = start; i <= sfarsit; i++){
+        setTimeout(() => {mergi_j1(i);}, i*100);
     }
 }
