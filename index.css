@@ -83,3 +83,84 @@ body{
     top: 280px;
     left: 400px;
 }
+#text_j2{
+    position: absolute;
+    top: 280px;
+    left: 430px;
+}
+#anunt{
+    position: absolute;
+    top: 180px;
+    left: 200px;
+    background-color: aquamarine;
+}
+#orase-owneri{
+    position: absolute;
+    top: 15px;
+    font-size: 11px;
+}
+#bucuresti{
+    position: absolute;
+    top: 280px;
+    left: 310px;
+}
+#iasi{
+    position: absolute;
+    top: 280px;
+    left: 200px;
+}
+#timisoara{
+    position: absolute;
+    top: 280px;
+    left: 100px;
+}
+#cluj{
+    position: absolute;
+    top: 280px;
+    left: 0px;
+}
+#bacau{
+    position: absolute;
+    top: 180px;
+    left: 0px;
+}
+#constanta{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+}
+#suceava{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#craiova{
+    position: absolute;
+    top: 0px;
+    left: 110px;
+}
+#pitesti{
+    position: absolute;
+    top: 0px;
+    left: 210px;
+}
+#bistrita{
+    position: absolute;
+    top: 0px;
+    left: 310px;
+}
+#oradea{
+    position: absolute;
+    top: 0px;
+    left: 400px;
+}
+#targoviste{
+    position: absolute;
+    top: 80px;
+    left: 400px;
+}
+#galati{
+    position: absolute;
+    top: 180px;
+    left: 400px;
+}
